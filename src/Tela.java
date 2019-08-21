@@ -1,3 +1,4 @@
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -5,11 +6,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class Tela extends JFrame implements ActionListener{
     
     JButton[][] botoes = new JButton[3][3];
     int jogador = 1;
+    Tabuleiro tabuleiro = new Tabuleiro();
     
     public Tela(){
         super("Jogo da velha - Tec. Desenv. de jogos Digitais JEAN CARLOS DE ALMEIDA");
@@ -26,11 +29,7 @@ public class Tela extends JFrame implements ActionListener{
             }
         }
     }
-
-    /*@Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }*/
+    
     public void actionPerformed(ActionEvent e){
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
@@ -55,6 +54,11 @@ public class Tela extends JFrame implements ActionListener{
         }
         
         botoes[x][y].setText(texto);
+        botoes[x][y].setFont(new Font("Dialog", 0, 75));
+        tabuleiro.adicionarJogada(x, y, texto);
+        if(tabuleiro.verificarVencedor(texto)){
+            JOptionPane.showMessageDialog(null, "Venceu o Jogador: " + texto);
+        }
     }
     
 
