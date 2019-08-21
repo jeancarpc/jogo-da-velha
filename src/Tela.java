@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 public class Tela extends JFrame implements ActionListener{
     
     JButton[][] botoes = new JButton[3][3];
+    int jogador = 1;
     
     public Tela(){
         super("Jogo da velha - Tec. Desenv. de jogos Digitais JEAN CARLOS DE ALMEIDA");
@@ -35,11 +36,26 @@ public class Tela extends JFrame implements ActionListener{
             for (int j = 0; j < 3; j++){
                 if(e.getSource() == botoes[i][j]){
                     botoes[i][j].setText("Teste");
+                    jogar(i, j, jogador);
                 }
             }
         }
     }
-
+    
+    public void jogar(int x, int y, int jogador){
+        
+        String texto;
+        
+        if(jogador == 1){    
+            texto = "X";
+            this.jogador = 2;
+        } else{
+            texto = "O";
+            this.jogador = 1;
+        }
+        
+        botoes[x][y].setText(texto);
+    }
     
 
 
