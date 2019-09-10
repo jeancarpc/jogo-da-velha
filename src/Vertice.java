@@ -1,15 +1,18 @@
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 public class Vertice {
     
     private Tabuleiro tabuleiroEstado;
     
-    private List<Vertice> verticesAdjascente = new ArrayList<Vertice>();
+    private Set<Vertice> verticesAdjascente = new HashSet<Vertice>();
     
         Vertice verticePai;
+        
 
         
         private String jogadaText; // saber se a jogada é X ou O
@@ -40,6 +43,22 @@ public class Vertice {
      public void adiconarVertice(Vertice vertice){
          verticesAdjascente.add(vertice);
      }
+
+    String getTextJogada() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setVerticePai(Vertice verticeAtual) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setTextJogada(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setTabuleiroEstado(Tabuleiro tabuleiroFilho) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     
