@@ -73,7 +73,7 @@ public class Tabuleiro {
             this.tabuleiro = tabuleiro;
         }
     public boolean isVazio(int x, int y){
-        return this.tabuleiro[x][y].equals("");
+        return this.tabuleiro[x][y].equals(" ");
     }
     public boolean isFimDeJogo(){
         if (verificarVencedor("X") || verificarVencedor("O")){

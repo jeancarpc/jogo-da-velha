@@ -37,6 +37,14 @@ public class Vertice {
         public Tabuleiro getTabuleiroEstado(){
             return tabuleiroEstado;
         }
+
+    public void setTabuleiroEstado(Tabuleiro tabuleiroEstado) {
+        this.tabuleiroEstado = tabuleiroEstado;
+    }
+
+    public void setVerticePai(Vertice verticePai) {
+        this.verticePai = verticePai;
+    }
         
         // Adiciona vertices filho a vértice atual
         
@@ -44,22 +52,15 @@ public class Vertice {
          verticesAdjascente.add(vertice);
      }
 
-    String getTextJogada() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Set<Vertice> getVerticesAdjascente() {
+        return verticesAdjascente;
     }
 
-    void setVerticePai(Vertice verticeAtual) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void setTextJogada(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void setTabuleiroEstado(Tabuleiro tabuleiroFilho) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setVerticesAdjascente(Set<Vertice> verticesAdjascente) {
+        this.verticesAdjascente = verticesAdjascente;
     }
     
     
+
     
 }
